@@ -1,2 +1,3 @@
 include ':app'
+include 'component:base'
 rootProject.name = "TomatoProject"

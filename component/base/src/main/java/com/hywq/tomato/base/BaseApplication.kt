@@ -1,4 +1,4 @@
-package com.example.base
+package com.hywq.tomato.base
 
 import android.app.Application
 import com.blankj.utilcode.util.Utils

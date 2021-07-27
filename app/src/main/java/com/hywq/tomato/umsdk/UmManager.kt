@@ -24,7 +24,7 @@ UMConfigure.init(Context context, String appkey, String channel, int deviceType,
 2.统计SDK基础统计指标自动采集
 //选择AUTO页面采集模式，统计SDK基础指标无需手动埋点可自动采集。
 //建议在宿主App的Application.onCreate函数中调用此函数。
-MobclickAgent.setPageCollectionMode(MobclickAgent.PageMode.AUTO);
+
  */
 
 object UmManager {
@@ -50,6 +50,7 @@ object UmManager {
                 onPause(activity)
             }
         })
+        MobclickAgent.setPageCollectionMode(MobclickAgent.PageMode.AUTO);
     }
 
     fun init(c: Context) {

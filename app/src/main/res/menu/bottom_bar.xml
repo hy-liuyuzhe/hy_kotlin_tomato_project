@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/icon_home"
+        android:title="首页"
+        android:icon="@drawable/ic_home"
+        app:exb_color="#FF8888" />
+
+
+    <item
+        android:id="@+id/icon_collection"
+        android:title="收藏"
+        android:icon="@drawable/ic_likes"
+        app:exb_color="#ff77a9" />
+
+    <item
+        android:id="@+id/icon_analytics"
+        android:title="统计"
+        android:icon="@drawable/ic_bookmarks"
+        app:exb_color="#fa2" />
+
+    <item
+        android:id="@+id/icon_settings"
+        android:title="设置"
+        android:icon="@drawable/ic_settings"
+        app:exb_color="@android:color/holo_blue_dark" />
+
+
+</menu>

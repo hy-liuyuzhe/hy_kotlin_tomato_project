@@ -16,6 +16,19 @@ android {
         applicationId rootProject.ext.sApplicationId
         versionCode rootProject.ext.sVersionCode
         versionName rootProject.ext.sVersionName
+
+        ndk {
+            abiFilters 'armeabi-v7a', "arm64-v8a"
+        }
+    }
+
+    splits {
+        abi {
+            enable true
+            include 'armeabi-v7a', "arm64-v8a"
+            exclude 'x86', 'x86_64', 'mips', 'mips64'
+            universalApk true
+        }
     }
 
     signingConfigs{
@@ -51,8 +64,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    dataBinding {
-        enabled true
+
+    buildFeatures{
+        dataBinding = true
     }
 }
 

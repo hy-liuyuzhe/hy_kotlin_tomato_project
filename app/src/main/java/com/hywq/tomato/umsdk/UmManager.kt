@@ -50,6 +50,7 @@ object UmManager {
                 onPause(activity)
             }
         })
+
         MobclickAgent.setPageCollectionMode(MobclickAgent.PageMode.AUTO);
     }
 

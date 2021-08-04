@@ -89,7 +89,6 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-service:$lifecycle_version"
     // optional - ProcessLifecycleOwner provides a lifecycle for the whole application process
     implementation "androidx.lifecycle:lifecycle-process:$lifecycle_version"
-
 }
 
 dependencies {
@@ -110,4 +109,6 @@ dependencies {
 
     def majorFrame = rootProject.ext.majorFrame
     implementation majorFrame.retrofit
+
+
 }

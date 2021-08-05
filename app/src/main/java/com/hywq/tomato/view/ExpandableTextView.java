@@ -275,7 +275,8 @@ public class ExpandableTextView extends androidx.appcompat.widget.AppCompatTextV
                         (int) (mTextPaint.measureText(mOrigText.subSequence(indexStart, indexEndTrimmed).toString()) + 0.5);
                 float widthTailReplaced = mTextPaint.measureText(getContentOfString(mEllipsisHint)
                         + (mShowToExpandHint ? (getContentOfString(mToExpandHint) + getContentOfString(mGapToExpandHint)) : ""));
-
+                Log.d("liuyuzhe", "getNewTextByConfig: "+widthTailReplaced);
+//                widthTailReplaced = widthTailReplaced + 10.0f;
                 int indexEndTrimmedRevised = indexEndTrimmed;
                 if (remainWidth > widthTailReplaced) {
                     int extraOffset = 0;

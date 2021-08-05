@@ -17,23 +17,23 @@ import androidx.appcompat.widget.AppCompatTextView;
 import com.hywq.tomato.R;
 
 
-public class YExpandTextView extends AppCompatTextView {
+public class TExpandTextView extends AppCompatTextView {
 
     private String TEXT_EXPAND = "展开";
     private String TEXT_CLOSE = " ";
-    private int mMaxLines;
+    private int mMaxLines = 3;
 
-    public YExpandTextView(Context context) {
+    public TExpandTextView(Context context) {
         super(context);
         init();
     }
 
-    public YExpandTextView(Context context, AttributeSet attrs) {
+    public TExpandTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public YExpandTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public TExpandTextView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }
@@ -44,8 +44,12 @@ public class YExpandTextView extends AppCompatTextView {
 
 
     @Override
-    public void setMaxLines(int maxLines) {
-        this.mMaxLines = maxLines;
-        super.setMaxLines(maxLines);
+    public void setText(CharSequence text, BufferType type) {
+        super.setText(getNewConfigText(text), type);
+    }
+
+    private CharSequence getNewConfigText(CharSequence text) {
+
+        return text;
     }
 }

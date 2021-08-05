@@ -14,7 +14,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <com.hywq.tomato.view.YExpandTextView
+    <com.hywq.tomato.view.TExpandTextView
         android:id="@+id/tv_activity_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

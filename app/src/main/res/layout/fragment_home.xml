@@ -5,6 +5,8 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/home"
+        android:padding="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="home"
@@ -12,6 +14,23 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.hywq.tomato.base.weight.ExpandableLayout
+        android:id="@+id/expandLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:background="@color/grade_blue"
+            android:layout_height="200dp"/>
+
+
+    </com.hywq.tomato.base.weight.ExpandableLayout>
 
 
     <com.hywq.tomato.view.ExpandTextView

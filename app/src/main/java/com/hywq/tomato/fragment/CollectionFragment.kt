@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.text.SpannableStringBuilder
 import android.text.Spanned
 import android.text.TextUtils
+import android.text.style.ImageSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.ScreenUtils
@@ -40,15 +42,7 @@ class CollectionFragment : Fragment() {
 //        showContent = "83838386838383838383838683838383838383838383838383838383838383838383838388383838383838383838383838383838838338888888888888888888888888888888888855555555555555555555555555555555595838383838383838383882828283838303828285828282020205858605858285850505858"
         ftvContent.maxLines = 3
         ftvContent.text = showContent
-
-        val ellipsizeStr =
-            TextUtils.ellipsize(ftvContent.text, ftvContent.paint,
-                ScreenUtils.getAppScreenWidth().toFloat()*3,
-                TextUtils.TruncateAt.END
-            )
-        LogUtils.d("ellipsizeStr: "+ellipsizeStr)
-
-//        appendPrefixIconContentText()
+        appendPrefixIconContentText()
 //        val c = ftvContent.text.toString()
 //        LogUtils.d("content: "+c)
 //        showContent.substring(2,f)
@@ -56,11 +50,23 @@ class CollectionFragment : Fragment() {
 
     private fun appendPrefixIconContentText() {
         if(!ftvContent.text.contains("图标"))return
+//        val spanBuilder = SpannableStringBuilder(ftvContent.text)
+//        val prefix = ImageLabelSpan(context, R.drawable.hot_card_talent_icon)
+//            .margin(0, 5)
+//            .ratio(1.7f)
+//        spanBuilder.setSpan(prefix,0,2, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+
         val spanBuilder = SpannableStringBuilder(ftvContent.text)
-        val prefix = ImageLabelSpan(context, R.drawable.hot_card_talent_icon)
-            .margin(0, 5)
-            .ratio(1.7f)
-        spanBuilder.setSpan(prefix,0,2, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        spanBuilder.setSpan(
+            ImageSpan(
+                ContextCompat.getDrawable(
+                    requireContext(),
+                    R.drawable.hot_card_talent_icon
+                )
+            ), 0, 2, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+
+
         ftvContent.text = spanBuilder
     }
 }

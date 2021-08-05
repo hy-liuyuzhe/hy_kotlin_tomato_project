@@ -11,6 +11,7 @@ import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.ScreenUtils
 import com.blankj.utilcode.util.SizeUtils
 import com.hywq.tomato.R
+import com.hywq.tomato.base.weight.ExpandableLayout
 import com.hywq.tomato.view.ExpandTextView
 import com.hywq.tomato.view.ImageLabelSpan
 
@@ -33,6 +34,10 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         ftvContent = view.findViewById<ExpandTextView>(R.id.tv_activity_desc)
+        val layout = view.findViewById<ExpandableLayout>(R.id.expandLayout)
+        view.findViewById<View>(R.id.home).setOnClickListener {
+            layout.toggle()
+        }
         ftvContent.setOnClickListener { clickContent() }
         ftvContent.initWidth(ScreenUtils.getScreenWidth() - SizeUtils.dp2px(25f))
         // 设置最大行数

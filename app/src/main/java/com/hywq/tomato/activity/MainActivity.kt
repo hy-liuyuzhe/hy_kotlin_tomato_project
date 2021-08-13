@@ -1,6 +1,7 @@
 package com.hywq.tomato.activity
 
 import android.os.Bundle
+import android.view.KeyEvent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -41,6 +42,19 @@ class MainActivity : AppCompatActivity() {
                 binding.viewPager.setCurrentItem(index, false)
             }
         }
+    }
+
+    override fun onBackPressed() {
+        LogUtils.d("onBackPressed")
+        super.onBackPressed()
+    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+//        if (keyCode == KeyEvent.KEYCODE_BACK){
+//            LogUtils.d("onKeyDown")
+//            return false
+//        }
+        return super.onKeyDown(keyCode, event)
     }
 
 

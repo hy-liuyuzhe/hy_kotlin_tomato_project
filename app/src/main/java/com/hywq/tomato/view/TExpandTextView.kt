@@ -17,12 +17,8 @@ class TExpandTextView @JvmOverloads constructor(
 ) : AppCompatTextView(context, attrs, defStyleAttr) {
 
     private val TEXT_EXPAND = "展开"
-    private val TEXT_CLOSE = "收起"
-    private val mMaxLines = 3
     private var originText = ""
 
-    init {
-    }
 
     override fun setText(text: CharSequence?, type: BufferType?) {
         super.setText(text, type)
@@ -87,15 +83,6 @@ class TExpandTextView @JvmOverloads constructor(
         }
     }
 
-    //    @Override
-    //    public void setText(CharSequence text, BufferType type) {
-    //        super.setText(getNewConfigText(text), type);
-    //    }
-    //
-    //    private CharSequence getNewConfigText(CharSequence text) {
-    //
-    //        return text;
-    //    }
     companion object {
         private const val ELLIPSIS_NORMAL = "\u2026" // HORIZONTAL ELLIPSIS (…)
     }

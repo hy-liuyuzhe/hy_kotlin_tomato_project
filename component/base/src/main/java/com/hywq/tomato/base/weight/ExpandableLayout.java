@@ -101,6 +101,7 @@ public class ExpandableLayout extends FrameLayout {
 
         int expansionDelta = size - Math.round(size * expansion);
         if (parallax > 0) {
+            Log.d("liuyuzhe", "onMeasure: 不遍历");
             float parallaxDelta = expansionDelta * parallax;
             for (int i = 0; i < getChildCount(); i++) {
                 View child = getChildAt(i);
@@ -116,7 +117,7 @@ public class ExpandableLayout extends FrameLayout {
                 }
             }
         }
-
+        Log.d("liuyuzhe", "setMeasuredDimension: "+height);
         if (orientation == HORIZONTAL) {
             setMeasuredDimension(width - expansionDelta, height);
         } else {

@@ -23,13 +23,11 @@ class YExpandTextView @JvmOverloads constructor(
     private val IDLE = 0
     private val EXPANDING = 1
     private val COLLAPSING = 2
+
     private var animator: ValueAnimator? = null
     private val interpolator: Interpolator = FastOutSlowInInterpolator()
     private var state = IDLE
 
-    private val TEXT_EXPAND = "展开"
-    private val TEXT_CLOSE = "收起"
-    private val mMaxLines = 3
 
     var viewHeight by Delegates.notNull<Int>()
     var maxLineHeight: Int = 0
@@ -39,7 +37,13 @@ class YExpandTextView @JvmOverloads constructor(
     private var expandText: CharSequence = ""
     private var initializer = false
     private var expansion: Float = 0f
+
+
     var duration = 500L
+    private val TEXT_EXPAND = "展开"
+    private val TEXT_CLOSE = "收起"
+    private val mMaxLines = 3
+
 
     companion object {
         private const val ELLIPSIS_NORMAL = "\u2026" // HORIZONTAL ELLIPSIS (…)
@@ -51,6 +55,12 @@ class YExpandTextView @JvmOverloads constructor(
 
     override fun scrollTo(x: Int, y: Int) {
 
+    }
+
+    fun setNewText(text: CharSequence?){
+        this.originText = text.toString()
+        initializer = false
+        setText(text)
     }
 
     override fun setText(text: CharSequence?, type: BufferType?) {
@@ -75,8 +85,6 @@ class YExpandTextView @JvmOverloads constructor(
                 expansionDelta = maxLineHeight
             }
 
-            LogUtils.d("maxLineHeight" + expansionDelta)
-
             setMeasuredDimension(measuredWidth, height - expansionDelta)
         }
     }
@@ -84,7 +92,6 @@ class YExpandTextView @JvmOverloads constructor(
     private fun setExpandText(layout: Layout, maxLines: Int) {
         viewHeight = measuredHeight;
         maxLineHeight = layout.getLineTop(maxLines)
-        LogUtils.d("maxLineHeight" + maxLineHeight)
 
         val lastLineEnd = layout.getLineEnd(maxLines - 1)
         val ellipsisText = ELLIPSIS_NORMAL + TEXT_EXPAND
@@ -104,9 +111,7 @@ class YExpandTextView @JvmOverloads constructor(
             if (expand) {
                 expand = false
                 LogUtils.d("去折叠1")
-                text = ""
                 text = expandText
-//                setMeasuredDimension(measuredWidth, maxLineHeight)
                 setExpand(0f, true)
             } else {
                 LogUtils.d("去展开")
@@ -122,7 +127,6 @@ class YExpandTextView @JvmOverloads constructor(
                 )
                 text = sp
                 setExpand(1f, true)
-//                setMeasuredDimension(measuredWidth, viewHeight)
             }
         }
 

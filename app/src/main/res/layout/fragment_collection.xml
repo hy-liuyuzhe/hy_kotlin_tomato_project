@@ -1,31 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/gray_aa">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="home"
+
+    <com.hywq.tomato.view.CarbonLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        android:background="@android:color/holo_blue_light"
+        android:elevation="14dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="home"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </com.hywq.tomato.view.CarbonLayout>
 
 
-    <com.hywq.tomato.view.TExpandTextView
-        android:id="@+id/tv_activity_desc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:includeFontPadding="false"
-        android:lineSpacingExtra="4dp"
-        android:maxLines="3"
-        android:ellipsize="end"
-        android:textColor="@color/color_00D8C9"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout1"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:layout_gravity="center"
+        android:background="@color/grade_blue">
+
+        <ImageView
+            android:id="@+id/image3"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_guess_like_rank_list" />
+
+        <ImageView
+            android:id="@+id/image2"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:scaleType="fitXY"
+            android:rotation="-15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/bg_live_home_top_default" />
+
+        <ImageView
+            android:id="@+id/image1"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:scaleType="fitXY"
+            android:rotation="-30"
+            android:src="@drawable/bg_sticker"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

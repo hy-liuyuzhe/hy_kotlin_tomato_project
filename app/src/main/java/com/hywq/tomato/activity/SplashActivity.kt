@@ -14,7 +14,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         ThreadUtils.runOnUiThreadDelayed({
-            MainActivity.start()
+            TomatoMainActivity.start()
             finish()
         },800)
     }

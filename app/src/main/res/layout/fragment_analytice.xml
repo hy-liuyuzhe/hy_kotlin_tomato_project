@@ -6,29 +6,60 @@
 
     </data>
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.hywq.tomato.base.weight.ExpandableLayout
+            android:id="@+id/expandLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:el_translate_children="false"
+            app:el_expanded="false"
+            app:el_duration="300"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:text="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <Button
+                    android:text="2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <Button
+                    android:text="3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+
+            </LinearLayout>
+
+
+        </com.hywq.tomato.base.weight.ExpandableLayout>
+
+        <Button
+            android:id="@+id/startExpand"
+            android:text="switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"/>
 
-        <com.hywq.tomato.view.TExpandTextView
-            android:id="@+id/expandText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:maxLines="10"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <com.hywq.tomato.view.YExpandTextView
-            android:id="@+id/expandText2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="300dp"
-            android:scrollbars="none"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    </LinearLayout>
 </layout>

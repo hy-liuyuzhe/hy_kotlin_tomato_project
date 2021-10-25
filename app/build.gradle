@@ -18,7 +18,7 @@ android {
         versionName rootProject.ext.sVersionName
 
         ndk {
-            abiFilters 'armeabi-v7a', "arm64-v8a","x86"
+            abiFilters 'armeabi-v7a'
         }
 
         externalNativeBuild {
@@ -28,14 +28,14 @@ android {
         }
     }
 
-    splits {
-        abi {
-            enable true
-            include 'armeabi-v7a', "arm64-v8a"
-            exclude 'x86', 'x86_64', 'mips', 'mips64'
-            universalApk true
-        }
-    }
+//    splits {
+//        abi {
+//            enable true
+//            include 'armeabi-v7a', "arm64-v8a"
+//            exclude 'x86', 'x86_64', 'mips', 'mips64'
+//            universalApk true
+//        }
+//    }
 
     signingConfigs{
         key {
@@ -63,6 +63,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['src/main/jniLibs']
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -75,12 +82,12 @@ android {
         dataBinding = true
     }
 
-    externalNativeBuild {
-        cmake {
-            path file('src/main/cpp/CMakeLists.txt')
-            version '3.10.2'
-        }
-    }
+//    externalNativeBuild {
+//        cmake {
+//            path file('src/main/cpp/CMakeLists.txt')
+//            version '3.10.2'
+//        }
+//    }
 
 }
 
@@ -129,5 +136,5 @@ dependencies {
     def majorFrame = rootProject.ext.majorFrame
     implementation majorFrame.retrofit
 
-
+    api 'com.tencent.liteavsdk:LiteAVSDK_Smart:9.0.10437'
 }

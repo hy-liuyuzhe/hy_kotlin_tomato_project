@@ -38,7 +38,9 @@ class HomeFragment : Fragment() {
         HttpsTrustManager.allowAllSSL()
 
         val textJni = view.findViewById<TextView>(R.id.textJni)
-        textJni.text = stringFromJNI().orEmpty()
+        textJni.setOnClickListener {
+            textJni.text = stringFromJNI().orEmpty()
+        }
     }
 
     external fun stringFromJNI(): String?

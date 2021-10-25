@@ -34,8 +34,8 @@ ext {
     exoplayerVersion = 'r2.5.1'
     loggerVersion = '2.1.1'
 
-    sVersionCode = 2021072403
-    sVersionName = "1.0.3.0"
+    sVersionCode = 2021072404
+    sVersionName = "1.0.4.0"
     sApplicationId = "com.hywq.tomato"
 
     androidVersionConfig = [

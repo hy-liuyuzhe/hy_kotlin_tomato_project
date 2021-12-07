@@ -1,6 +1,7 @@
 package com.hywq.tomato.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,7 +18,8 @@ import javax.net.ssl.*
 class HomeFragment : Fragment() {
 
     init {
-        System.loadLibrary("ndk_yuwq")
+        Log.d("liuyuzhe", "home: ");
+        System.loadLibrary("ndk_yuwq_c")
     }
 
     override fun onCreateView(

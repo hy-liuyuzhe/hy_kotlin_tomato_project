@@ -31,7 +31,7 @@ android {
 //    splits {
 //        abi {
 //            enable true
-//            include 'armeabi-v7a', "arm64-v8a"
+//            include 'armeabi-v7a'
 //            exclude 'x86', 'x86_64', 'mips', 'mips64'
 //            universalApk true
 //        }
@@ -82,12 +82,12 @@ android {
         dataBinding = true
     }
 
-//    externalNativeBuild {
-//        cmake {
-//            path file('src/main/cpp/CMakeLists.txt')
-//            version '3.10.2'
-//        }
-//    }
+    externalNativeBuild {
+        cmake {
+            path file('src/main/cpp/CMakeLists.txt')
+            version '3.10.2'
+        }
+    }
 
 }
 
@@ -136,5 +136,5 @@ dependencies {
     def majorFrame = rootProject.ext.majorFrame
     implementation majorFrame.retrofit
 
-    api 'com.tencent.liteavsdk:LiteAVSDK_Smart:9.0.10437'
+    //api 'com.tencent.liteavsdk:LiteAVSDK_Smart:9.0.10437'
 }
